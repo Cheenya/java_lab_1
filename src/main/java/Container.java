@@ -1,10 +1,10 @@
 class Container {
-    private ContainerEl head;
-    private ContainerEl tail;
+    private Node head;
+    private Node tail;
 
     void addF()
     {
-        ContainerEl a = new ContainerEl();
+        Node a = new Node();
         a.data = -1;
 
         if(head == null)
@@ -19,8 +19,9 @@ class Container {
     }
 
 // Добавляем в конец списка
-    void addB(int data) {
-        ContainerEl a = new ContainerEl();
+    void addB(int data)
+    {
+        Node a = new Node();
         a.data = data;
         if (tail == null)
         {
@@ -33,7 +34,7 @@ class Container {
 
     void printL()
     {
-        ContainerEl el = this.head;
+        Node el = this.head;
         while (el != null)
         {
             System.out.print(el.data + " ");
@@ -41,10 +42,27 @@ class Container {
         }
         System.out.println();
     }
+    int getE(int index) {
+        if (head == null)
+            return -1;
 
+        Node el = head;
+        for (int i = 1; i < index; i++) {
+            if (el != null)
+                el = el.next;
+            else
+                return -1;
+        }
+
+        if (el != null)
+            return el.data;
+        else
+            return -1;
+
+    }
     void delE(int data)
     {
-        if(head == null)
+        if (head == null)
             return;
 
         if (head == tail) {
@@ -58,7 +76,7 @@ class Container {
             return;
         }
 
-        ContainerEl el = head;
+        Node el = head;
         while (el.next != null) {
             if (el.next.data == data) {
                 if(tail == el.next)

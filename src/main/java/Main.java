@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        List con = new List();
+        Container con = new Container();
         for(int i = 0; i<=15; i++) con.addB(i);
 
         con.printL();

@@ -1,10 +1,10 @@
-class List {
-    private ListEl head;
-    private ListEl tail;
+class Container {
+    private ContainerEl head;
+    private ContainerEl tail;
 
     void addF()
     {
-        ListEl a = new ListEl();
+        ContainerEl a = new ContainerEl();
         a.data = -1;
 
         if(head == null)
@@ -20,7 +20,7 @@ class List {
 
 // Добавляем в конец списка
     void addB(int data) {
-        ListEl a = new ListEl();
+        ContainerEl a = new ContainerEl();
         a.data = data;
         if (tail == null)
         {
@@ -33,7 +33,7 @@ class List {
 
     void printL()
     {
-        ListEl el = this.head;
+        ContainerEl el = this.head;
         while (el != null)
         {
             System.out.print(el.data + " ");
@@ -58,7 +58,7 @@ class List {
             return;
         }
 
-        ListEl el = head;
+        ContainerEl el = head;
         while (el.next != null) {
             if (el.next.data == data) {
                 if(tail == el.next)
